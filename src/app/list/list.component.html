@@ -1,0 +1,102 @@
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 ">
+      <div class="card text-center">
+        <div class="card-header text-white bg-info">
+          TO_DO
+        </div>
+        <div [dragula]='"bag-items"' [dragulaModel]="lists['TO_DO']" class="card-body">
+          <div *ngFor="let item of lists['TO_DO'];  let i = index" class="card list-item text-white bg-info">
+            <div class="text-left card-body">
+                {{item.data}}
+                <div class="meta-data">
+                  <div>
+                  <div>{{item.timeCreated | date:'shortTime'}}</div>
+                    <div>{{item.timeCreated | date:'dd/M/yy'}}</div>
+                  </div>
+                  <div> 
+                      <button type="button" (click)="deleteTask(i,'TO_DO')" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="card-footer text-muted">
+          <app-add-card (messageEvent)="receiveMessage($event)" [listName]="'TO_DO'" ></app-add-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-header text-white bg-secondary">
+          IN_PROGRESS
+        </div>
+        <div [dragula]='"bag-items"' [dragulaModel]="lists['IN_PROGRESS']" class="card-body">
+            <div *ngFor="let item of lists['IN_PROGRESS'];  let i = index" class="card list-item text-white bg-secondary">
+                <div class="text-left card-body">
+                    {{item.data}}
+                    <div class="meta-data">
+                      <div>
+                      <div>{{item.timeCreated | date:'shortTime'}}</div>
+                        <div>{{item.timeCreated | date:'dd/M/yy'}}</div>
+                      </div>
+                      <div> 
+                          <button type="button" (click)="deleteTask(i,'TO_DO')" class="close" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="card-footer text-muted">
+          <app-add-card (messageEvent)="receiveMessage($event)" [listName]="'IN_PROGRESS'"></app-add-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-header text-white bg-success">
+          DONE
+        </div>
+        <div [dragula]='"bag-items"' [dragulaModel]="lists['DONE']"  class="card-body">
+            <div *ngFor="let item of lists['DONE'];  let i = index" class="card list-item text-white bg-success">
+                <div class="text-left card-body">
+                    {{item.data}}
+                    <div class="meta-data">
+                      <div>
+                      <div>{{item.timeCreated | date:'shortTime'}}</div>
+                        <div>{{item.timeCreated | date:'dd/M/yy'}}</div>
+                      </div>
+                      <div> 
+                          <button type="button" (click)="deleteTask(i,'TO_DO')" class="close" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <div class="card-footer text-muted">
+          <app-add-card (messageEvent)="receiveMessage($event)" [listName]="'DONE'"></app-add-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div>
+  
+</div>
+<div>
+ 
+</div><div>
+  
+</div>

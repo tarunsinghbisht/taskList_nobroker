@@ -1,0 +1,22 @@
+<div *ngIf="showInputCard" class="card text-center">
+  <div class="card-header">
+    Add New task
+    <button type="button" (click)="showInputCard=false" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="card-body">
+      <form  [formGroup]="addTaskForm" novalidate>
+    <div class="input-group mb-3">
+      <input formControlName="taskData" type="text" class="form-control" placeholder="Enter your task" aria-label="Enter your task" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit" [disabled]="!addTaskForm.valid" (click)="addCard();showInputCard=false">Add task</button>
+      </div>
+    </div>
+      </form>
+  </div>
+
+</div>
+<div *ngIf="!showInputCard" id="add-card" class="text-right">
+    <button class="btn btn-info btn-sm" (click)="showInputCard=true">Add a new card</button>
+  </div>

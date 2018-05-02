@@ -1,0 +1,13 @@
+.meta-data{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+.list-item
+{
+    margin: 5px 0;
+    >div{
+    padding: 10px;
+}}
