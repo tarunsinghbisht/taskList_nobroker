@@ -46,7 +46,7 @@
                         <div>{{item.timeCreated | date:'dd/M/yy'}}</div>
                       </div>
                       <div> 
-                          <button type="button" (click)="deleteTask(i,'TO_DO')" class="close" aria-label="Close">
+                          <button type="button" (click)="deleteTask(i,'IN_PROGRESS')" class="close" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                       </div>
@@ -74,7 +74,7 @@
                         <div>{{item.timeCreated | date:'dd/M/yy'}}</div>
                       </div>
                       <div> 
-                          <button type="button" (click)="deleteTask(i,'TO_DO')" class="close" aria-label="Close">
+                          <button type="button" (click)="deleteTask(i,'DONE')" class="close" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                       </div>
